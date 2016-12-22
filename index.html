@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="author" content="liyanan"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/reset.css" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <!--<link href="css/add-ons.min.css" rel="stylesheet"/>-->
+    <link href="css/common.css" rel="stylesheet"/>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/alert.js"></script>
+    <title>后台界面设计器</title>
+</head>
+<body class="mt-55 pos-rel">
+<div id="navbar" class="navbar navbar-inverse navbar-fixed-top mb-0">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-pop">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="javascript:;">后台界面设计器</a>
+        </div>
+        <div id="nav-pop" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a id="download" href="javascript:;" data-toggle="modal" data-target="#myModal">
+                        <i class="fa fa-download"></i>
+                        粘贴源代码
+                    </a>
+                </li>
+                <li>
+                    <a id="cancel" href="javascript:;">
+                        <i class="fa fa-times"></i>
+                        删除选中元素
+                    </a>
+                </li>
+                <li>
+                    <a id="copy" href="javascript:;">
+                        <i class="fa fa-copy"></i>
+                        复制选中元素
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="edit" class="pos-rel">
+    <div id="editor" class="pos-fix top-55 left-0 tc-white w200 bg-222 y-auto">
+        <ul class="pl-5 pt-10 mb-0">
+            <li class="mt-5 pointer tc-white menu">
+                <strong>
+                    <i class="fa fa-plus"></i> 布局设置
+                </strong>
+            </li>
+            <li class="mt-5">
+                <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">12</div>
+                <a href="javascript:;" class="btn btn-default btn-sm btn-primary ml-10 sure" data-toggle="modal" data-target="#myModal2" data-class="GridSystem" data-attr="col-md-12">确定</a>
+            </li>
+            <li class="mt-5">
+                <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">6&nbsp;&nbsp;&nbsp;&nbsp;6</div>
+                <a href="javascript:;" class="btn btn-default btn-sm btn-primary ml-10 sure" data-toggle="modal" data-target="#myModal2" data-class="GridSystem" data-attr="col-md-6 col-md-6">确定</a>
+            </li>
+            <li class="mt-5">
+                <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">8&nbsp;&nbsp;&nbsp;&nbsp;4</div>
+                <a href="javascript:;" class="btn btn-default btn-sm btn-primary ml-10 sure" data-toggle="modal" data-target="#myModal2" data-class="GridSystem" data-attr="col-md-8 col-md-4">确定</a>
+            </li>
+            <li class="mt-5">
+                <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">4&nbsp;&nbsp;&nbsp;&nbsp;8</div>
+                <a href="javascript:;" class="btn btn-default btn-sm btn-primary ml-10 sure" data-toggle="modal" data-target="#myModal2" data-class="GridSystem" data-attr="col-md-4 col-md-8">确定</a>
+            </li>
+            <li class="mt-5">
+                <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">4&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;4</div>
+                <a href="javascript:;" class="btn btn-default btn-sm btn-primary ml-10 sure" data-toggle="modal" data-target="#myModal2" data-class="GridSystem" data-attr="col-md-4 col-md-4 col-md-4">确定</a>
+            </li>
+        </ul>
+        <ul class="pl-5 pt-10 mb-0">
+            <li class="mt-5 pointer tc-white menu">
+                <strong>
+                    <i class="fa fa-plus"></i> 工具组件
+                </strong>
+            </li>
+            <li class="mt-5 none">
+                <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">面板(panel)</div>
+                <a href="javascript:;" class="btn btn-default btn-sm btn-primary ml-10 sure" data-toggle="modal" data-target="#myModal2" data-class="Panel">确定</a>
+            </li>
+            <li class="mt-5 none">
+                <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">页头</div>
+                <a href="javascript:;" class="btn btn-default btn-sm btn-primary ml-10 sure" data-toggle="modal" data-target="#myModal2" data-class="PageHeader">确定</a>
+            </li>
+            <li class="mt-5 none">
+                <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">路径导航</div>
+                <a href="javascript:;" class="btn btn-default btn-sm btn-primary ml-10 sure" data-toggle="modal" data-target="#myModal2" data-class="Breadcrumb">确定</a>
+            </li>
+            <li class="mt-5 none">
+                <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">表格</div>
+                <a href="javascript:;" class="btn btn-default btn-sm btn-primary ml-10 sure" data-toggle="modal" data-target="#myModal2" data-class="ResponsiveTable" >确定</a>
+            </li>
+            <li class="mt-5 tc-white none">
+                <ul class="pl-0 mb-0">
+                    <li class="mt-5 pointer tc-white menu">
+                        <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">
+                            <i class="fa fa-plus"></i> 表单
+                        </div>
+                    </li>
+                    <li class="pl-10 mt-5 tc-white">
+                        <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">内联表单</div>
+                        <a href="javascript:;" class="btn btn-default btn-sm btn-primary sure" data-toggle="modal" data-target="#myModal2" data-class="FormInline">确定</a>
+                    </li>
+                    <li class="pl-10 mt-5 tc-white">
+                        <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">水平表单</div>
+                        <a href="javascript:;" class="btn btn-default btn-sm btn-primary sure" data-toggle="modal" data-target="#myModal2" data-class="FormHorizontal">确定</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="mt-5 none">
+                <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">分页导航</div>
+                <a href="javascript:;" class="btn btn-default btn-sm btn-primary ml-10 sure" data-toggle="modal" data-target="#myModal2" data-class="Pagination">确定</a>
+            </li>
+        </ul>
+        <ul class="pl-5 pt-10 mb-0">
+            <li class="mt-5 pointer tc-white menu">
+                <strong>
+                    <i class="fa fa-plus"></i> 基本标签
+                </strong>
+            </li>
+            <li class="mt-5 tc-white none">
+                <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">图片</div>
+                <a href="javascript:;" class="btn btn-default btn-sm btn-primary ml-10 sure" data-toggle="modal" data-target="#myModal2" data-class="Image">确定</a>
+            </li>
+            <li class="mt-5 tc-white none">
+                <ul class="pl-0 mb-0">
+                    <li class="mt-5 pointer tc-white menu">
+                        <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">
+                            <i class="fa fa-plus"></i> 按钮
+                        </div>
+                    </li>
+                    <li class="pl-10 mt-5 tc-white">
+                        <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">普通按钮</div>
+                        <a href="javascript:;" class="btn btn-default btn-sm btn-primary sure" data-toggle="modal" data-target="#myModal2" data-class="Button">确定</a>
+                    </li>
+                    <li class="pl-10 mt-5 tc-white">
+                        <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">分裂式按钮</div>
+                        <a href="javascript:;" class="btn btn-default btn-sm btn-primary sure" data-toggle="modal" data-target="#myModal2" data-class="SplitButton">确定</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="mt-5 tc-white none">
+                <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">文本域</div>
+                <a href="javascript:;" class="btn btn-default btn-sm btn-primary ml-10 sure" data-toggle="modal" data-target="#myModal2" data-class="Textarea">确定</a>
+            </li>
+            <li class="mt-5 tc-white none">
+                <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">下拉列表</div>
+                <a href="javascript:;" class="btn btn-default btn-sm btn-primary ml-10 sure" data-toggle="modal" data-target="#myModal2" data-class="Select">确定</a>
+            </li>
+            <li class="mt-5 tc-white none">
+                <ul class="pl-0 mb-0">
+                    <li class="mt-5 pointer tc-white menu">
+                        <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">
+                            <i class="fa fa-plus"></i> 输入框
+                        </div>
+                    </li>
+                    <li class="pl-10 mt-5 tc-white">
+                        <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">普通输入框</div>
+                        <a href="javascript:;" class="btn btn-default btn-sm btn-primary sure" data-toggle="modal" data-target="#myModal2" data-class="TextInput">确定</a>
+                    </li>
+                    <li class="pl-10 mt-5 tc-white">
+                        <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">输入框组</div>
+                        <a href="javascript:;" class="btn btn-default btn-sm btn-primary sure" data-toggle="modal" data-target="#myModal2">确定</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="mt-5 tc-white none">
+                <div class="inline-block w100 h30 lh-30 pl-5 ts-10 tc-white">超链接</div>
+                <a href="javascript:;" class="btn btn-default btn-sm btn-primary ml-10 sure" data-toggle="modal" data-target="#myModal2" data-class="HyperLink">确定</a>
+            </li>
+        </ul>
+    </div>
+    <div class="pos-abs top-n55 zIndex-9999 right-0 tc-white w200 pl-10 pr-10 bg-222 text-center">
+        <a href="javascript:;" id="attribute-list" class="inline-block h55 lh-55">
+            <i class="fa fa-table"> </i> 属性列表
+            <i class="fa fa-angle-double-right"></i>
+        </a>
+        <div id="editor-right" class="none"></div>
+    </div>
+    <div class="pos-abs top-0 left-200 h30 lh-30">
+        <ol id="domTree" class="breadcrumb bg-white">
+            <li><a class="path" href="javascript:;">body</a></li>
+        </ol>
+    </div>
+    <div id="origin" class="top-45 left-215 bd-all-ccc bd-all-blue pos-abs y-auto x-hidden targetEle">
+    </div>
+</div>
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title">粘贴源代码</h4>
+            </div>
+            <div class="modal-body">
+                <textarea id="code"  rows="30" class="w100p"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button id="paste" type="button" class="btn btn-primary">粘贴</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div class="modal fade" id="myModal2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title">操作</h4>
+            </div>
+            <div class="modal-body">
+                <form id="table-set" class="none">
+                    <div class="form-group">
+                        <label>输入表格行数：</label>
+                        <input type="text" id="rows" class="form-control" placeholder="请输入表格行数">
+                        <label>输入表格列数：</label>
+                        <input type="text" id="cols"  class="form-control" placeholder="请输入表格列数">
+                    </div>
+                    <hr/>
+                </form>
+                <form id="form-set" class="none">
+                    <label>选择表单控件及个数</label>
+                    <div id="input-set" class="checkbox">
+                        <label>
+                            <input type="checkbox" checked/>文本框
+                        </label>
+                        <input type="number" step="1" min="1" max="10" value="1" class="ml-20 number-set"/>个
+                    </div>
+                    <div id="radio-set" class="checkbox">
+                        <label>
+                            <input type="checkbox"/>单选框
+                        </label>
+                        <input type="number" step="1" min="1" max="10" value="1" class="ml-20 number-set"/>个
+                    </div>
+                    <div id="checkbox-set" class="checkbox">
+                        <label>
+                            <input type="checkbox"/>复选框
+                        </label>
+                        <input type="number" step="1" min="1" max="10" value="1" class="ml-20 number-set"/>个
+                    </div>
+                    <div id="textarea-set" class="checkbox">
+                        <label>
+                            <input type="checkbox"/>文本域
+                        </label>
+                        <input type="number" step="1" min="1" max="10" value="1" class="ml-20 number-set"/>个
+                    </div>
+                    <div id="select-set" class="checkbox">
+                        <label>
+                            <input type="checkbox"/>下拉框
+                        </label>
+                        <input type="number" step="1" min="1" max="10" value="1" class="ml-20 number-set"/>个
+                    </div>
+                    <div id="button-set" class="checkbox">
+                        <label>
+                            <input type="checkbox" checked/>按钮项
+                        </label>
+                        <input type="number" step="1" min="1" max="10" value="1" class="ml-20 number-set"/>个
+                    </div>
+                    <div id="form-table" class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>控件名称</th>
+                                <th class="text-center">升序</th>
+                                <th class="text-center">降序</th>
+                            </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <hr/>
+                </form>
+                <form>
+                    <div class="form-group">
+                        <label class="control-label">添加元素</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="insertEle" value="inside" checked>
+                                当前元素内部插入
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="insertEle" value="prev">
+                                当前元素同级之前插入
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="insertEle" value="next">
+                                当前元素同级之后插入
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="insertEle" value="wrap">
+                                包裹当前元素
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:;" id="set"  data-dismiss="modal" class="btn btn-primary">确定</a>
+                <button type="button" id="cancel-set" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div class="modal fade" id="myModal3">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title">选择图标</h4>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button id="icon-choose" type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--script-->
+<script type="text/javascript" src="http://ui.yidaochn.com/theme/plain/alert/alert.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
